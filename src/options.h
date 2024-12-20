@@ -109,7 +109,10 @@ enum Option_Type
   /* --- Informative output --- */
 
   /* Enable debugging (prints diagnostics to stderr).  */
-  DEBUG        = 1 << 21
+  DEBUG        = 1 << 21,
+
+  /* Generate json output  */
+  JSON         = 1 << 31
 };
 
 /* Class manager for gperf program Options.  */

@@ -123,8 +123,8 @@ Options::long_usage (FILE * stream)
   fprintf (stream,
            "  -L, --language=LANGUAGE-NAME\n"
            "                         Generates code in the specified language. Languages\n"
-           "                         handled are currently C++, ANSI-C, C, and KR-C. The\n"
-           "                         default is ANSI-C.\n");
+           "                         handled are currently C++, ANSI-C, C, KR-C, and json.\n"
+           "                         The default is ANSI-C.\n");
   fprintf (stream, "\n");
   fprintf (stream,
            "Details in the output code:\n");
@@ -501,6 +501,7 @@ Options::~Options ()
                "\nC is...........: %s"
                "\nANSIC is.......: %s"
                "\nCPLUSPLUS is...: %s"
+               "\nJSON is........: %s"
                "\nSEVENBIT is....: %s"
                "\nLENTABLE is....: %s"
                "\nCOMP is........: %s"
@@ -535,6 +536,7 @@ Options::~Options ()
                _option_word & C ? "enabled" : "disabled",
                _option_word & ANSIC ? "enabled" : "disabled",
                _option_word & CPLUSPLUS ? "enabled" : "disabled",
+               _option_word & JSON ? "enabled" : "disabled",
                _option_word & SEVENBIT ? "enabled" : "disabled",
                _option_word & LENTABLE ? "enabled" : "disabled",
                _option_word & COMP ? "enabled" : "disabled",
@@ -581,7 +583,7 @@ Options::set_language (const char *language)
   if (_language == NULL)
     {
       _language = language;
-      _option_word &= ~(KRC | C | ANSIC | CPLUSPLUS);
+      _option_word &= ~(KRC | C | ANSIC | CPLUSPLUS | JSON);
       if (!strcmp (language, "KR-C"))
         _option_word |= KRC;
       else if (!strcmp (language, "C"))
@@ -590,6 +592,10 @@ Options::set_language (const char *language)
         _option_word |= ANSIC;
       else if (!strcmp (language, "C++"))
         _option_word |= CPLUSPLUS;
+      else if (!strcmp (language, "json"))
+        _option_word |= JSON;
+      else if (!strcmp (language, "JSON"))
+        _option_word |= JSON;
       else
         {
           fprintf (stderr,
