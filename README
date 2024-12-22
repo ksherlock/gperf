@@ -8,6 +8,13 @@ to me.
 See also https://github.com/jwinarske/gperf which has javascript
 and lua generators.
 
+
+Building:
+./autopull.sh
+./autogen.sh
+./configure
+make
+
 ---
 
 This is GNU gperf. It is a program that generates perfect hash
