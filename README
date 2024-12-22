@@ -1,3 +1,15 @@
+
+This is a clone of https://savannah.gnu.org/projects/gperf which
+exists to produce json output (-Ljson) that can be consumed elsewhere.
+
+While this is probably antithetical to the GNU goals, it was useful
+to me.
+
+See also https://github.com/jwinarske/gperf which has javascript
+and lua generators.
+
+---
+
 This is GNU gperf. It is a program that generates perfect hash
 functions for sets of key words.  A perfect hash function is:
 
