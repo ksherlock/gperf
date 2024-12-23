@@ -5,7 +5,7 @@ exists to produce json output (-Ljson) that can be consumed elsewhere.
 While this is probably antithetical to the GNU goals, it was useful
 to me.
 
-See also https://github.com/jwinarske/gperf which has javascript
+See also https://github.com/yakaz/gperf which has javascript
 and lua generators.
 
 
